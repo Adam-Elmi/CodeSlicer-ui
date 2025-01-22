@@ -16,13 +16,13 @@ try {
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
-                    content = e.target.result;
+                    console.log(split(e.target.result));
                     fileArea.fileName.textContent = file.name;
                     fileArea.fileSize.textContent = calculateSize(file.size);
                     fileArea.fileExtension.textContent = file.name.slice(file.name.lastIndexOf(".") + 1);
                 }
                 reader.onerror = (error) => {
-                    reject(error);
+                    console.error("file failed to load: ", error);
                 }
                 reader.readAsText(file);
             }
