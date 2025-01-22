@@ -6,8 +6,6 @@ const fileArea = {
     fileExtension: document.querySelector(".extension")
 };
 
-let content = "";
-
 try {
     if (fileInput) {
         fileInput.addEventListener("change", (event) => {
@@ -16,8 +14,7 @@ try {
                 const reader = new FileReader();
 
                 reader.onload = (e) => {
-                    console.log(split(e.target.result));
-                    fileArea.fileName.textContent = file.name;
+                    fileArea.fileName.textContent = cuttingText(file.name);
                     fileArea.fileSize.textContent = calculateSize(file.size);
                     fileArea.fileExtension.textContent = file.name.slice(file.name.lastIndexOf(".") + 1);
                 }
