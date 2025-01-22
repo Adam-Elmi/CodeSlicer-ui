@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSlicer</title>
+    <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+   <main>
+    <div class="file-container">
+        <label for="file-input" class="upload-area">
+            <div class="image-container">
+                <img src="./assets/upload.png" alt="Upload-Image" class="upload-image">
+            </div>
+            <span class="notify-text">Click here to upload a file.</span>
+            <span class="notify-text">Current supported files: <span class="supported-files">js</span></span>
+        </label>
+        <input type="file" name="file-input" id="file-input" style="display: none;">
+        <!-- Where file info appear -->
+        <div class="file-area">
+            <div class="file-extension">
+                <span class="extension">e</span>
+            </div>
+            <div class="file-info">
+                <h3 class="file-name">empty</h3>
+                <span class="file-size">0 size</span>
+            </div>
+        </div>
+       </div>
+   </main>
     <script src="/src/main.js"></script>
 </body>
 </html>
