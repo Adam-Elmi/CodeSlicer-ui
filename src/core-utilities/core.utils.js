@@ -15,7 +15,9 @@ export function fileReader(fileInput) {
                     reader.onload = (e) => {
                         fileArea.fileName.textContent = cuttingText(file.name);
                         fileArea.fileSize.textContent = calculateSize(file.size);
-                        fileArea.fileExtension.textContent = file.name.slice(file.name.lastIndexOf(".") + 1);
+                        fileArea.fileExtension.textContent = file.name.includes(".") ?
+                        file.name.slice(file.name.lastIndexOf(".") + 1)
+                        : "#";
                     }
                     reader.onerror = (error) => {
                         console.error("file failed to load: ", error);
